@@ -4,7 +4,7 @@ public class Main {
         SuperHero ironman = new SuperHero();
         SuperHero flash = new SuperHero();
 
-        System.out.println("Епічна битва супергероїв розпочинається!");
+        System.out.println(" The epic battle of SuperHeroes begins! ");
 // В мене Марвел рулить))
         ironman.name = "IronMan";
         ironman.attackPower = 35;
@@ -34,12 +34,12 @@ public class Main {
         //ironman.attack(flash);
         //ironman.attack(flash);
 
-        if (flash.health < ironman.health){
-            System.out.println("The Winner is IronMan!");
+        if (ironman.isAlive()){
+            System.out.println(" The Winner is IronMan! ");
         }
-        else if (ironman.health <flash.health){
-            System.out.println("The Winner is Flash!");
-        } else if (ironman.health == flash.health){
+        else if (flash.isAlive()){
+            System.out.println(" The Winner is Flash! ");
+        } else {
             System.out.println(" This is a Draw. Lets try again  ");
         }
         flash.showStats();

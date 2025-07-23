@@ -6,13 +6,19 @@ public class SuperHero {
 
 
     public void attack(SuperHero opponent) {
-        System.out.println("SuperHero  " + name + "  attacks");
+        System.out.println("SuperHero   " + name + "   attacks ");
         opponent.takeDamage(attackPower);
     }
 
     public void takeDamage(int damage) {
-        System.out.println("SuperHero  " + name + "  receives" + damage + "  damage");
         health -= damage;
+        if (health < 0 ) {
+            health = 0;
+            System.out.println("SuperHero  " + name + " took " + damage + "damages. Current health:  " + health);
+        }
+        if (health == 0){
+        System.out.println("SuperHero  " + name + " died in an epic battle");
+    }
     }
 
     public boolean isAlive() {
@@ -20,6 +26,6 @@ public class SuperHero {
     }
 
     public void showStats() {
-        System.out.println("SuperHero  " +name+ "  after attack has" + health+ "  health" );
+        System.out.println("SuperHero  " + name + "  after attack has " + health + "  health" );
     }
 }
